@@ -41,7 +41,7 @@ public class ProveedorDAO {
     }
     
     public List ListarProveedor() {
-        List<Proveedor> Listapr = new ArrayList();
+        List<Proveedor> Listapr = new ArrayList<>();
         String sql = "SELECT * FROM proveedor";
         try {
             con = cn.getConnection();

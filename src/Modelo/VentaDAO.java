@@ -95,7 +95,7 @@ public class VentaDAO {
     }
     
     public List ListarVenta() {
-        List<Venta> ListaVenta = new ArrayList();
+        List<Venta> ListaVenta = new ArrayList<>();
         String sql = "SELECT * FROM ventas";
         try {
             con = cn.getConnection();

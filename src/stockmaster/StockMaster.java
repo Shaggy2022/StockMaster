@@ -1,20 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package stockmaster;
 
 import Vista.Login;
 
 public class StockMaster {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Login lg = new Login();
-        lg.setVisible(true);
+        try {
+            System.out.println("Inicio de la aplicación");
+
+            Login lg = new Login();
+            lg.setVisible(true);
+
+            System.out.println("Ventana Login mostrada");
+        } catch (Exception e) {
+            e.printStackTrace();  // Imprime el error completo en la consola
+        }
     }
-    
 }

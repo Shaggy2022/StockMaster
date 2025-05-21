@@ -6,28 +6,45 @@ package Vista;
 
 import Modelo.LoginDAO;
 import Modelo.login;
+import javax.swing.JOptionPane;
 
 public class Registro extends javax.swing.JFrame {
     login lg = new login();
     LoginDAO login = new LoginDAO();
+    private Sistema sistema;
+    
     public Registro() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
+    
+    public Registro(Sistema sistema) {
+        initComponents();
+        this.sistema = sistema;
+    }
+    
     public void validar() {
-        String correo = txtCorreo.getText();
-        String pass = String.valueOf(txtPass.getPassword());
-        String nombre = txtNombre.getText();
-        String rol = cbxRol.getSelectedItem().toString();
-        if (!"".equals(correo) || !"".equals(pass)) {
-             lg.setNombre(nombre);
-             lg.setCorreo(correo);
-             lg.setPass(pass);
-             lg.setRol(rol);
-             login.Registrar(lg);
-             Login iniciar = new Login();
-             iniciar.setVisible(true);
-             dispose();
+    String correo = txtCorreo.getText();
+    String pass = String.valueOf(txtPass.getPassword());
+    String nombre = txtNombre.getText();
+    String rol = cbxRol.getSelectedItem().toString();
+
+    if (!"".equals(correo) || !"".equals(pass)) {
+        lg.setNombre(nombre);
+        lg.setCorreo(correo);
+        lg.setPass(pass);
+        lg.setRol(rol);
+        login.Registrar(lg);
+
+        JOptionPane.showMessageDialog(null, "Usuario Registrado con éxito");
+
+        if (sistema != null) {
+            sistema.LimpiarTable();
+            sistema.ListarUsuario();
+        }
+        dispose();
+        } else {
+        JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios");
         }
     }
 

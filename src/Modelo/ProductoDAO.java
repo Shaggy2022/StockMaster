@@ -37,6 +37,7 @@ public class ProductoDAO {
         }
     }
     
+    @SuppressWarnings("unchecked")
     public void ConsultarProveedor(JComboBox proveedor) {
         String sql = "SELECT nombre FROM proveedor";
         try {
@@ -52,7 +53,7 @@ public class ProductoDAO {
     }
     
     public List ListarProducto() {
-        List<Producto> ListaPro = new ArrayList();
+        List<Producto> ListaPro = new ArrayList<>();
         String sql = "SELECT * FROM productos";
         try {
             con = cn.getConnection();

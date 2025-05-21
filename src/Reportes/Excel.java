@@ -45,7 +45,7 @@ public class Excel {
         Sheet sheet = book.createSheet("Productos");
  
         try {
-            InputStream is = new FileInputStream("src/img/Logo.png");
+            InputStream is = new FileInputStream("C:/Users/Valerin/OneDrive/Documentos/NetBeansProjects/StockMaster/src/Img/logo.png");
             byte[] bytes = IOUtils.toByteArray(is);
             int imgIndex = book.addPicture(bytes, Workbook.PICTURE_TYPE_PNG);
             is.close();
